@@ -1,5 +1,4 @@
-const storage = window.localStorage;
-storage.setItem('bookmarked', 'false');
+//HAMBURGER MENU CLOSE - OPEN BUTTON 
 
 const menu = document.querySelector('.nav_bar');
 const menuBtn = document.querySelector('.nav_hamburger');
@@ -21,6 +20,8 @@ modalCloseBtn.addEventListener('click', () => {
     modalBg.classList.remove('modal_active');
 });
 
+//BOOKMARK BTN ACTIVE
+
 const bookmarkBtn = document.querySelector('.btn_bookmark');
 const bookmarkCircle = document.querySelector('.btn_bookmark_circle');
 const bookmarkPath = document.querySelector('.btn_bookmark_path');
@@ -34,5 +35,13 @@ bookmarkBtn.addEventListener('click', () => {
     } else {
         bookmarkText.innerHTML = "Bookmark";
     }
-})
+});
+
+//MODAL SECTION OPTIONS ANIMATIONS 
+
+
+
+
+
+
 

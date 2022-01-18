@@ -164,7 +164,7 @@ main {
     border-radius: 50px;
     padding-right: 2.5rem;
     cursor: pointer;
-    transition: all 150ms ease-in-out;
+    transition: all 250ms ease-in-out;
     &:hover {
       opacity: 0.85;
     }
@@ -194,6 +194,7 @@ main {
     width: 19rem;
     background-color: rgba(20, 123, 116, 0.082);
   }
+
 }
 
 .section_stat {
@@ -413,35 +414,29 @@ main {
   padding: 4.8rem;
   margin-top: 19rem;
   margin-bottom: 28rem;
-  h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0;
-  }
-  .modal_text {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    color:hsl(0, 0, 48)
-  }
-  h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0;
-  }
-  .window_close {
-    @include flex (row, normal, center, space-between);
-    img:hover {
-      filter: grayscale(100%);
+
+  .close_modal {
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    .icon_close_modal:hover {
+      opacity: 1;
     }
   }
+}
 
-  .icon_close{
-    transition: opacity 100ms ease-in-out;
-    cursor: pointer;
+.modal_header {
+  @include flex(column, normal, flex-start, flex-start);
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0;
   }
-  
-  .icon_close:hover {
-    opacity: 1;
-  }
+    p {
+      font-size: 1.5rem;
+      line-height: 2.8rem;
+    }
 }
 
 .options {
@@ -455,86 +450,143 @@ main {
 }
 
 .options > * {
-  @include flex (column, normal, flex-start, flex-start);
-  position: relative;
+  @include flex(column, normal, flex-start, flex-start);
   border: 1px solid hsl(0, 0, 84);
   border-radius: 0.8rem;
-  padding: 2.8rem;
-  .option_rate {
+  transition: all 200ms ease-in-out;
+}
+
+.options > *.active{
+  border: 2px solid $primary-moderate;
+}
+
+.option_content_wrapper {
+  @include flex(column, normal, flex-start, space-between);
+  min-height: 15.7rem;
+  padding: 3.3rem 2.5rem;
+  position: relative;
+  .amount_left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 3rem;
+    right: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    p {
+      margin: 0;
+    }
+  }
+  p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1.1rem;
+    margin-bottom: 0;
+    margin-left: 4.5rem;
+  } 
+}
+
+.trigger {
+  @include flex(row, 2rem, center, start);
+  cursor: pointer;
+  .option_content_header {
+    display: flex;
+    gap: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .option_cat {
     font-size: 1.6rem;
     font-weight: 500;
     color: $primary-moderate;
   }
-  .option_check_cat {
-    font-size: 1.6rem;
-    font-weight: 700;
-    transition: color 150ms ease-in-out;
-  }
-  .option_check_cat:hover {
-    color: $primary-moderate;
-  }
 }
+
 input[type="radio"] {
   appearance: none;
+  background-color: #fff;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid hsl(0, 0, 84);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
 }
 
-.option_header {
-  @include flex (row, normal, center,space-between);
-  .option_header_text {
-    @include flex(row, 2rem, center, flex-start)
-  }
-  .modal_amount_left {
-    @include flex (row, 1rem, center, start);
-    font-size: 1.5rem;
-    color: hsl(0, 0, 48);
-    .amount_left {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: hsl(100, 100, 0);
-    }
-  }
+input[type="radio"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  background-color: $primary-moderate;
+  border-radius: 50%;
+  transition: 150ms ease-in-out;
 }
 
-@media screen and (max-width: 767px) {
-  .modal_window {
-    padding: 3rem 2.5rem;
-
-
-  }
-
-  .options {
-    p {
-      font-size: 1.4rem;
-      line-height: 2.4rem;
-      margin-bottom: 2.6rem;
-    }
-  }
-  .options > * {
-    padding: 2.5rem;
-  }
-
-  .option_free {
-    p {
-      margin-bottom: 0;
-    }
-  }
-
-  .option_header {
-    .option_header_text {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      span {
-        font-size: 1.4rem;
-      }
-    }
-    .modal_amount_left {
-      position: absolute;
-      left: 2.5rem;
-      bottom: 1.8rem;
-    }
-  }
+input[type="radio"]:checked::before {
+  transform: scale(1);
 }
 
 .option_input {
+  border-top: 1px solid hsl(0, 0, 84);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  padding: 0 3rem;
+  transition: all 300ms ease-in-out;
+  form {
+    display: flex;
+    gap: 1.5rem;
+  }
+  button {
+    @extend .btn_extension;
+    width: 10.7rem;
+    height: 4.7rem;
+  }
+  span {
+    width: 10rem;
+    height: 4.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid hsl(0, 0, 84);
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: hsla(100, 100, 0, 0.3);
+    padding: 0 1rem;
+    &:hover {
+      border: 1px solid $primary-moderate;
+    }
+    input {
+      border: none;
+      outline: none;
+      text-align: right;
+      font-size: 1.4rem;
+      font-weight: 700;
+      width: 50%;
+      caret-color: $primary-moderate;
+    }
+  }
 }
+
+.option_input.active {
+  visibility: visible;
+  height: 9.7rem;
+}
+
+
+
+
+
+
+
