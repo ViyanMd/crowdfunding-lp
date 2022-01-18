@@ -1218,7 +1218,7 @@ input[type="radio"]:checked::before {
   text-align: right;
   font-size: 1.4rem;
   font-weight: 700;
-  width: 50%;
+  width: 45%;
   caret-color: #3cb4ac;
 }
 
