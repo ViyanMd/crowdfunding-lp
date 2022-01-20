@@ -55,7 +55,7 @@
       <div class="section_stat_values">
         <div class="section_stat_goal">
           <span class="section_stat_goal_current">
-            
+
           </span>
           <p>of $100,000 backed</p>
         </div>
@@ -139,17 +139,8 @@
       </div>
     </section>
   </main>
-  <!-- 
-  Success modal start
 
-  Thanks for your support!
-  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-  an email once our campaign is completed.
-  Got it!
-
-  Success modal end -->
-
-  <div class="modal_bg">
+  <div class="modal_bg" id="modal_1">
     <div class="modal_window">
       <div class="close_modal">
         <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -181,7 +172,7 @@
           </div>
           <div class="option_input">
             <p>Thank you for your support!</p>
-            <button type="submit">Continue</button>
+            <button class="btn_form" type="submit">Continue</button>
           </div>
         </div>
 
@@ -205,7 +196,7 @@
             <p>Enter your pledge</p>
             <form action="#">
               <span class="input_wrapper">$<input type="text" inputmode="numeric" /></span>
-              <button type="submit">Continue</button>
+              <button class="btn_form" type="submit">Continue</button>
             </form>
           </div>
         </div>
@@ -229,7 +220,7 @@
             <p>Enter your pledge</p>
             <form action="#">
               <span class="input_wrapper">$<input type="text" inputmode="numeric" /></span>
-              <button type="submit">Continue</button>
+              <button class="btn_form" type="submit">Continue</button>
             </form>
           </div>
         </div>
@@ -254,13 +245,32 @@
             <p>Enter your pledge</p>
             <form action="#">
               <span class="input_wrapper">$<input type="text" inputmode="numeric" /></span>
-              <button type="submit">Continue</button>
+              <button class="btn_form" type="submit">Continue</button>
             </form>
           </div>
         </div>
+    </div>
+  </div>
 
+    <div class="modal_bg" id="modal_2">
+      <div class="modal_thanks">
+        <div class="icon_check">
+          <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#3CB3AB" cx="32" cy="32" r="32" />
+              <path stroke="#FFF" stroke-width="5" d="M20 31.86L28.093 40 44 24" />
+            </g>
+          </svg>
+        </div>
+        <h1>Thanks for your support!</h1>
+        <p>
+          Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+          an email once our campaign is completed.
+        </p>
+        <button type="button" class="modal_thanks_btn">Got it!</button>
       </div>
     </div>
+
     <script src="./js/index.js"></script>
 </body>
 
