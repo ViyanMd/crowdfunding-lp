@@ -115,6 +115,14 @@ completeModal.forEach(btn => {
     })
 })
 
+const closeModalEx = () => {
+    document.getElementById('modal1').classList.remove('modal_active');
+}
+
+document.querySelector('.close_modal').addEventListener('click', () => {
+    closeModalEx();
+})
+
 
 
 
