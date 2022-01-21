@@ -9,24 +9,6 @@ menuBtn.addEventListener('click', () => {
     menu.classList.toggle('nav_active');
 });
 
-//MODAL MENU ACTIVATION 
-
-const modalOpenBtn = document.querySelectorAll('.btn_select');
-const modalCloseBtn = document.querySelector('.icon_close_modal');
-const modalBg = document.querySelector('.modal_bg');
-const modalThank = document.querySelector('.modal_thanks_bg');
-const submitBtn = document.querySelectorAll('.btn_form');
-
-modalOpenBtn.forEach(button => button.addEventListener('click', () => {
-    modalBg.classList.add('modal_active');
-}));
-
-modalCloseBtn.addEventListener('click', () => {
-    modalBg.classList.remove('modal_active');
-});
-
-
-
 
 //BOOKMARK BTN ACTIVE
 
@@ -50,6 +32,22 @@ bookmarkBtn.addEventListener('click', () => {
    bookmark(bookmarkIcon);
 });
 
+//MODAL MENU ACTIVATION 
+
+// const modalOpenBtn = document.querySelectorAll('.btn_select');
+// const modalCloseBtn = document.querySelector('.icon_close_modal');
+// const modalBg = document.querySelector('.modal_bg');
+// const modalThank = document.querySelector('.modal_thanks_bg');
+// const submitBtn = document.querySelectorAll('.btn_form');
+
+// modalOpenBtn.forEach(button => button.addEventListener('click', () => {
+//     modalBg.classList.add('modal_active');
+// }));
+
+// modalCloseBtn.addEventListener('click', () => {
+//     modalBg.classList.remove('modal_active');
+// });
+
 //MODAL SECTION OPTIONS ANIMATIONS 
 
 const radioBtn = document.querySelectorAll("input[type='radio']");
@@ -66,9 +64,9 @@ function selectedPledge(target) {
         }
     });
 
-    target.scrollIntoView({block: "center", behavior: "smooth"});
     target.closest('.option').classList.add("active");
     target.closest('.option').lastElementChild.classList.add('active');
+
 };
 
 radioBtn.forEach(item => {
@@ -76,6 +74,53 @@ radioBtn.forEach(item => {
         selectedPledge(e.target);
     })
 })
+
+//COMPLETING FORM 
+
+let modalStack = [];
+let stackIsEmpty = () => !modalStack.length;
+
+const openModal = modalId => {
+    const modalWindow = document.getElementById(modalId);
+    if(modalId === 'modal1') {
+        modalWindow.classList.add('modal_active');
+        modalStack.push(modalWindow);
+    } else if(modalId === 'modal2') {
+        modalStack.push(modalWindow);
+        closeBottom();
+        modalWindow.classList.add('modal_active');
+    }
+}
+
+const closeBottom = () => {
+    const bottomModal = document.getElementById('modal1');
+    bottomModal.classList.remove('modal_active');
+}
+
+
+let btnModalTrigger = document.querySelectorAll('button');
+btnModalTrigger.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let triggerBtn = e.target;
+        let modalId = triggerBtn.getAttribute("data-modal-id");
+        openModal(modalId);
+    })
+})
+
+const completeModal = document.querySelectorAll('.modal_thanks_btn');
+completeModal.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.getElementById('modal2').classList.remove('modal_active');
+    })
+})
+
+
+
+
+
+
+
 
 
 

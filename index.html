@@ -35,7 +35,7 @@
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
       </div>
       <div class="section_hero_btn">
-        <button type="button" class="btn_select" id="btn_sponsor">Back this project</button>
+        <button type="button" class="btn_select" data-modal-id="modal1">Back this project</button>
 
         <button type="button" class="btn_bookmark">
           <div class="btn_bookmark_icon">
@@ -102,7 +102,7 @@
           <div class="cell_reward_left">
             <span class="cell_reward_left_amount">101</span>left
           </div>
-          <button type="button" class="btn_select">Select Reward</button>
+          <button type="button" class="btn_select" data-modal-id="modal1">Select Reward</button>
         </div>
       </div>
       <div class="cell_black">
@@ -118,7 +118,7 @@
           <div class="cell_reward_left">
             <span class="cell_reward_left_amount">64</span>left
           </div>
-          <button type="button" class="btn_select">Select Reward</button>
+          <button type="button" class="btn_select" data-modal-id="modal1">Select Reward</button>
         </div>
       </div>
       <div class="cell_special">
@@ -134,14 +134,15 @@
           <div class="cell_reward_left">
             <span class="cell_reward_left_amount">0</span>left
           </div>
-          <button type="button" class="btn_select">Out of Stock</button>
+          <button type="button" class="btn_select" data-modal-id="modal1">Out of Stock</button>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="modal_bg" id="modal_1">
+  <div class="modal_bg" id="modal1">
     <div class="modal_window">
+
       <div class="close_modal">
         <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
           <path class="icon_close_modal"
@@ -172,7 +173,7 @@
           </div>
           <div class="option_input">
             <p>Thank you for your support!</p>
-            <button class="btn_form" type="submit">Continue</button>
+            <button class="modal_thanks_btn" type="submit" data-modal-id="modal2">Continue</button>
           </div>
         </div>
 
@@ -196,7 +197,7 @@
             <p>Enter your pledge</p>
             <form action="#">
               <span class="input_wrapper">$<input type="text" inputmode="numeric" /></span>
-              <button class="btn_form" type="submit">Continue</button>
+              <button class="btn_form" type="submit" data-modal-id="modal2">Continue</button>
             </form>
           </div>
         </div>
@@ -220,7 +221,7 @@
             <p>Enter your pledge</p>
             <form action="#">
               <span class="input_wrapper">$<input type="text" inputmode="numeric" /></span>
-              <button class="btn_form" type="submit">Continue</button>
+              <button class="btn_form" type="submit" data-modal-id="modal2">Continue</button>
             </form>
           </div>
         </div>
@@ -245,14 +246,15 @@
             <p>Enter your pledge</p>
             <form action="#">
               <span class="input_wrapper">$<input type="text" inputmode="numeric" /></span>
-              <button class="btn_form" type="submit">Continue</button>
+              <button class="btn_form" type="submit" data-modal-id="modal2">Continue</button>
             </form>
           </div>
         </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-    <div class="modal_bg" id="modal_2">
+    <div class="modal_bg" id="modal2">
       <div class="modal_thanks">
         <div class="icon_check">
           <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
