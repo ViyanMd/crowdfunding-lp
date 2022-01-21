@@ -24,6 +24,7 @@ deadline.innerHTML = 56;
 
 
 
+
 //HAMBURGER MENU CLOSE - OPEN BUTTON 
 
 const menu = document.querySelector('.nav_bar');
@@ -58,19 +59,6 @@ bookmarkBtn.addEventListener('click', () => {
 
 //MODAL MENU ACTIVATION 
 
-// const modalOpenBtn = document.querySelectorAll('.btn_select');
-// const modalCloseBtn = document.querySelector('.icon_close_modal');
-// const modalBg = document.querySelector('.modal_bg');
-// const modalThank = document.querySelector('.modal_thanks_bg');
-// const submitBtn = document.querySelectorAll('.btn_form');
-
-// modalOpenBtn.forEach(button => button.addEventListener('click', () => {
-//     modalBg.classList.add('modal_active');
-// }));
-
-// modalCloseBtn.addEventListener('click', () => {
-//     modalBg.classList.remove('modal_active');
-// });
 
 //MODAL SECTION OPTIONS ANIMATIONS 
 
