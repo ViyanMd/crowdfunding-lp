@@ -1,3 +1,27 @@
+//STATE MANAGMENT 
+const bookmarked = false;
+
+const stats = {
+        generated: 89914,
+        participants: 5007,
+        deadline: 56
+}
+
+const availability = {
+        bamboo: 101,
+        blackEdition: 64,
+        mahoganySpecial: 0
+}
+
+let generated = document.querySelector('.section_stat_goal_current');
+let participants = document.querySelector('.section_stat_participants_current');
+let deadline = document.querySelector('.section_stat_deadline_left');
+
+generated.innerHTML = stats.generated.toLocaleString('en-IN');
+participants.innerHTML = stats.participants.toLocaleString('en-IN');
+deadline.innerHTML = 56;
+
+
 
 
 //HAMBURGER MENU CLOSE - OPEN BUTTON 
